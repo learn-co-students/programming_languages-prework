@@ -1,25 +1,53 @@
 
 require 'pry'
+
+languages = {
+  :oo => {
+    :ruby => {
+      :type => "interpreted"
+    },
+    :javascript => {
+      :type => "interpreted"
+    },
+    :python => {
+      :type => "interpreted"
+    },
+    :java => {
+      :type => "compiled"
+    }
+  },
+  :functional => {
+    :clojure => {
+      :type => "compiled"
+    },
+    :erlang => {
+      :type => "compiled"
+    },
+    :scala => {
+      :type => "compiled"
+    },
+    :javascript => {
+      :type => "interpreted"
+    }
+
+  }
+}
+
 def reformat_languages(languages)
   new_hash = {}
 
-  languages.each do |style, language_data|
-    new_hash[:ruby] = {:type => "interpreted"}
-    new_hash[:ruby][:style] = [:oo]
-    new_hash[:javascript] = {:type => "interpreted"}
-    new_hash[:javascript][:style] = [:oo, :functional]
-    new_hash[:python] = {:type => "interpreted"}
-    new_hash[:python][:style] = [:oo]
-    new_hash[:java] = {:type => "compiled"}
-    new_hash[:java][:style] = [:oo]
-    new_hash[:clojure] = {:type => "compiled"}
-    new_hash[:clojure][:style] = [:functional]
-    new_hash[:erlang] = {:type => "compiled"}
-    new_hash[:erlang][:style] = [:functional]
-    new_hash[:scala] = {:type => "compiled"}
-    new_hash[:scala][:style] = [:functional]
+  languages.each do |type, language_hash|
+    #binding.pry
+    language_hash.each do |name, attributes|
+      #binding.pry
+      new_hash[name] ||= attributes
+      new_hash[name][:style] ||=[]
+      new_hash[name][:style] << type
+
 
     #binding.pry
 end
+end
 new_hash
+#binding.pry
 end
