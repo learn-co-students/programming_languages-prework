@@ -1,13 +1,13 @@
 def reformat_languages(languages)
   new_language_hash={}
 
- languages.each do |language_orientation,language_name|
-   language_name.each do|language_name_out, type|
-    out_name =  language_name_out
-    t = type[:type]
-    orientation = language_orientation
-     new_language_hash[language_name_out]={type:t,style: [language_orientation]}
+ languages.each do |type,hash|
+
+   hash.map do|name, attributes|
+    new_language_hash[name]||=attributes
+    new_language_hash[name][:style]||=[]
+    new_language_hash[name][:style]<< type
   end
 end
   return new_language_hash
-end
+end 
