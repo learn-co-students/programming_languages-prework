@@ -1,5 +1,4 @@
 def reformat_languages(languages)
-  puts languages
   oo = languages[:oo].keys
   functional = languages[:functional].keys
 
