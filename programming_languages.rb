@@ -1,5 +1,3 @@
-require 'pry'
-
 def reformat_languages(language_hash)
   new_hash = {}
   language_hash.each do |style, language|
@@ -16,42 +14,3 @@ def reformat_languages(language_hash)
   end
   new_hash
 end
-
-
-#Starting:  style => language => type
-#Final:  language => type => [styles]
-
-language_hash = {
-  :oo => {
-    :ruby => {
-      :type => "interpreted"
-    },
-    :javascript => {
-      :type => "interpreted"
-    },
-    :python => {
-      :type => "interpreted"
-    },
-    :java => {
-      :type => "compiled"
-    }
-  },
-  :functional => {
-    :clojure => {
-      :type => "compiled"
-    },
-    :erlang => {
-      :type => "compiled"
-    },
-    :scala => {
-      :type => "compiled"
-    },
-    :javascript => {
-      :type => "interpreted"
-    }
-
-  }
-}
-
-
-reformat_languages(language_hash)
