@@ -3,16 +3,19 @@ def reformat_languages(languages)
   lang_style = []
 
   languages.each do |style, language|
-    lang_style = [style]
+    lang_style = style
+
     language.each do |name, attributes|
-      new_hash[name] = attributes
+      if !(new_hash.key?(name))
+        new_hash[name] = attributes
+      end
 
-      attributes.each do |attribute_name, attrbiute_value|
-
-      if new_hash[name][:style] == []
-        new_hash[name][:style] = lang_style
+      if new_hash[name].key?(:style)
+        if !(new_hash[name][:style].include?(lang_style))
+          new_hash[name][:style] << lang_style
+        end
       else
-        new_hash[name][:style][lang_style] << lang_style
+        new_hash[name][:style] = [lang_style]
       end
     end
   end
