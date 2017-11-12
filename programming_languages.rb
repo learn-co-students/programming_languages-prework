@@ -33,16 +33,24 @@ require 'pry'
 
 def reformat_languages(languages)
   new_hash = {}
-  styleArr = []
-  languages.each do |k, v|
-    styleArr << k
-    # binding.pry
-    v.each do |lang, type|
-      type.store(:style, styleArr)
-      new_hash[lang] = type
-      # new_hash[lang] = { :style => styleArr }
-      binding.pry
-    end
+  languages.each_value do |k, v|
+    binding.pry
   end
   new_hash
 end
+
+
+# def reformat_languages(languages)
+#   new_hash = {}
+#   styleArr = []
+#   languages.each do |k, v|
+#     styleArr << k
+#
+#     v.each do |lang, type|
+#       type.store(:style, styleArr)
+#       new_hash[lang] = type
+#
+#     end
+#   end
+#   new_hash
+# end
