@@ -34,12 +34,12 @@ new_hash = {}
 # }
 
 def reformat_languages(languages)
-  languages.each_value do |style, lang|
-    lang.each do |type|
-
+  languages.each_value do |style|
+    new_hash = style
+    binding.pry
+    lang.each do |lang, type|
+      binding.pry
     end
-
-    # binding.pry
   end
   new_hash
 end
