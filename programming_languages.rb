@@ -37,7 +37,7 @@ def reformat_languages(languages)
     v.each do |lang, type|
       new_hash[lang] = type
       if lang == :ruby
-        new_hash[:style] << k
+        new_hash.store(:style, k)
         binding.pry
       end
       # binding.pry
