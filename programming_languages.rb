@@ -1,7 +1,5 @@
 require 'pry'
 
-new_hash = {}
-
 # {
 #   :ruby => {
 #     :type => "interpreted",
@@ -34,11 +32,10 @@ new_hash = {}
 # }
 
 def reformat_languages(languages)
-  languages.each_value do |style|
-    new_hash = style
-    binding.pry
-    lang.each do |lang, type|
-      binding.pry
+  languages.each do |k, v|
+    # binding.pry
+    v.each do |lang, type|
+      # binding.pry
     end
   end
   new_hash
