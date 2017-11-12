@@ -36,16 +36,13 @@ def reformat_languages(languages)
   languages.each do |k, v|
     v.each do |lang, type|
       new_hash[lang] = type
-      # binding.pry
-      if k == [:oo]
-        new_hash[lang] = { :style => k }
+      if lang == :ruby
+        new_hash[lang] = k
         binding.pry
       end
       # binding.pry
     end
-
   end
-  # new_hash.each
   new_hash
   # binding.pry
 end
