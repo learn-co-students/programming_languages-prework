@@ -33,8 +33,9 @@ require 'pry'
 
 def reformat_languages(languages)
   new_hash = {}
-  languages.each_value do |k, v|
-    binding.pry
+  languages.each do |k, v|
+    new_hash.merge(v)
+    # binding.pry
   end
   new_hash
 end
