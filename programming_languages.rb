@@ -33,20 +33,18 @@ require 'pry'
 
 def reformat_languages(languages)
   new_hash = {}
-  k_holder = []
   languages.each do |k, v|
     v.each do |lang, type|
       new_hash[lang] = type
       if lang == :ruby
-        k_holder = k
-        new_hash[lang] = { :style => k }
-        binding.pry
+        new_hash[:style] = [:oo]
+        # binding.pry
       end
       # binding.pry
     end
   end
   new_hash
-  # binding.pry
+  binding.pry
 end
 
 
