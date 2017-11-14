@@ -25,39 +25,3 @@ def reformat_languages(languages)
   end
   return new_hash
 end
-
-
-=begin
-      case langs
-      when :ruby
-        languages[key][value][langs][:style] = [:oo]
-        #puts languages[key][:ruby]
-      when :javascript
-        languages[key][value][langs][:style] = [:oo, :functional]
-        #puts languages[key][:javascript]
-      when :python
-        languages[key][value][langs][:style] = [:oo]
-        #puts languages[key][:python]
-      when :java
-        languages[key][value][langs][:style] = [:oo]
-        #puts languages[key][:java]
-      when :clojure
-        languages[key][value][langs][:style] = [:functional]
-        #puts languages[key][:clojure]
-      when :erlang
-        languages[key][value][langs][:style] = [:functional]
-        #puts languages[key][:erlang]
-      when :scala
-        languages[key][value][langs][:style] = [:functional]
-        puts languages[key][:scala]
-      end
-    end
-  end
-  return languages
-end
-=end
-=begin
-elsif langs == :javascript
- languages[key][langs][deets][:style] = [:oo, :functional]
-end
-=end
