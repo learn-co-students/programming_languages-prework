@@ -9,5 +9,5 @@ def reformat_languages(languages)
   
   new_hash[:javascript][:style].unshift(:oo)
   
-  return new_hash
+  new_hash
 end
