@@ -3,11 +3,15 @@ def reformat_languages(languages)
   
   languages.map do | style_name, style |
     style.map do | language, type_info |
-      new_hash[language] = type_info.merge! :style => [style_name]
+      new_hash[language] = type_info.merge! :style => []
     end
   end
   
-  new_hash[:javascript][:style].unshift(:oo)
+  languages.map do | style_name, style |
+    style.map do | language, type_info |
+      new_hash[language][:style].push(style_name)
+    end
+  end
   
   new_hash
 end
