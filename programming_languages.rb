@@ -1,20 +1,13 @@
 def reformat_languages(languages)
-	new_hash = {
-	}
-	languages.each do |key, data|
+	answer = Hash.new []
+	languages.each do |style, data|
 		data.each do |language, type|
-			new_hash[language] = type.merge :style => []
-		end
-	end
-	new_hash.each do |new_language, new_type|
-		languages.each do |style, data|
-			data.each do |language, type|
-				if new_language == language
-					new_hash[language][:style] << style
-				end
+			if answer.member?(language)
+				answer[language][:style] << style
+			else
+				answer[language] = type.merge(:style => [style])
 			end
 		end
 	end
-	new_hash
+	answer
 end
-
