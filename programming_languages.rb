@@ -5,7 +5,7 @@ def reformat_languages(languages)
   languages.each do |style, lang|
 
     lang.each do |l|
-      # laguage key / hash value containing type and style
+      # l key / hash value containing type and style
       # check if language already belongs to new_hash
       # shove style to [style]
       if !new_hash.key?(l[0])
