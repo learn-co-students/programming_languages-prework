@@ -7,8 +7,6 @@ def reformat_languages(languages)
         type: type[:type],
         style: []
       }
-      #new_hash[language][:style] = []
-      #new_hash[language][:style] << paradigm
     end
   end
   
