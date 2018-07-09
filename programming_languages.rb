@@ -1,34 +1,33 @@
-# require 'pry'
+require 'pry'
 
 
 def reformat_languages(languages)
   # your code here
   new_hash = {}
-  style_str = ""
-  languages.each do |style, language|
-    # puts "#{style}: #{language}"
-    style_str = style
-    # binding.pry
-    language.each do |language, type|
-      new_hash[language] = {type: type}
-      puts type
-      type.each do |type, value|
-        new_hash[language] = {style: [style_str]}
+  languages.each do |style, language_hash|
+    # puts "#{style}: #{language_hash}"
+    language_hash.each do |language, attribute_hash|
+      # new_hash[language] = attribute_hash
+      #
+      # if new_hash[language][attribute_hash].nil?
+      #   new_hash[language][:style] ||= [style]
+      # else
+      #   new_hash[language][:style].push(style)
+      # end
+      attribute_hash.each do |attribute, value|
+        if new_hash[language].nil?
+          new_hash[language] = {}
+        end
+        new_hash[language][:style] ||= []
+        new_hash[language][:style].push(style)
 
-        # puts style_str
-        #
-        # puts "beginning #{type}: #{value}"
-        # binding.pry
-
-        #
-        #
-        #
-        # puts "after #{attribute}: #{value}"
-        # puts style_str
-
+        if new_hash[language][attribute].nil?
+          new_hash[language][attribute] = value
+        end
       end
     end
   end
-  puts new_hash
+  new_hash
+
 
 end
