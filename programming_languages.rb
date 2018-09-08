@@ -21,12 +21,17 @@ def reformat_languages(languages)
 
                 if ref_hash[language].nil?
                     ref_hash[language] = {}  # setting outer most layer of hash to the language
+                    # ruby {}
+                }
                 end
                 ref_hash[language][:style] ||= [] #creating array to insert mult styles ie [oo, func]
                 ref_hash[language][:style] << language_style #append the key from original second layer
+                #ruby{style => [oo]}
+            }
 
                 if ref_hash[language][type].nil? # add type hash
                     ref_hash[language][type] = int_or_comp
+                    #ruby{style => [oo], type => [interpreted]}
                 end
             end
         end
