@@ -1,16 +1,18 @@
 require 'pry'
-def reformat_languages(languages)
+def reformat_languages(language_styles)
   new_hash = {}
 
-  languages.each do |style, language|
-    language.each do |language_name, attribute|
-      if new_hash.include?(language_name) == false
-        attribute[:style] = [style]
-        binding.pry
-      else new_hash[]
+  language_styles.each do |style, languages|
+    languages.each do |language_name, attribute|
+      if new_hash.include?(language_name)
+        new_hash[language_name][:style] << style
+      else
+        new_hash[language_name] = attribute
+        new_hash[language_name][:style] = [style]
       end
     end
   end
+  new_hash
 end
 
 
