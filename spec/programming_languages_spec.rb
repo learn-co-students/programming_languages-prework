@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe '#reformat_languages' do
+describe '#reformat_languages' do 
 
   let(:languages_by_style) {
     {
@@ -31,7 +31,7 @@ describe '#reformat_languages' do
         :javascript => {
           :type => "interpreted"
         }
-     
+
       }
     }
   }
