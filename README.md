@@ -15,17 +15,17 @@ languages = {
   :oo => {
     :ruby => {
       :type => "interpreted"
-    },
+      },
     :javascript => {
       :type => "interpreted"
-    },
+      },
     :python => {
       :type => "interpreted"
-    },
+      },
     :java => {
       :type => "compiled"
-    }
-  },
+      }
+    },
   :functional => {
     :clojure => {
       :type => "compiled"
@@ -39,12 +39,12 @@ languages = {
     :javascript => {
       :type => "interpreted"
     }
- 
+
   }
 }
 ```
 
-This is the hash you will be operating on and reformatting, programmatically––meaning you will not simply re-write the hash in order to get the tests passing. 
+This is the hash you will be operating on and reformatting, programmatically––meaning you will not simply re-write the hash in order to get the tests passing.
 
 **Iterate over the hash and build a new hash that has the languages as keys that point to a value of a hash that describes the type and style**.
 
@@ -83,10 +83,10 @@ This is the hash you will be operating on and reformatting, programmatically–�
 }
 ```
 
-### Tips: 
+### Tips:
 
-* Start by setting a variable, let's call it `new_hash` equal to an empty hash. Throughout your iteration over the `languages` hash, you can then add new key/value pairs to `new_hash`. At the end of your method, return `new_hash`. 
-* Remember that you can create key/value pairs by using the `[]=` method on a hash. For example: 
+* Start by setting a variable, let's call it `new_hash` equal to an empty hash. Throughout your iteration over the `languages` hash, you can then add new key/value pairs to `new_hash`. At the end of your method, return `new_hash`.
+* Remember that you can create key/value pairs by using the `[]=` method on a hash. For example:
 
 ```ruby
 hash = {}
@@ -103,7 +103,7 @@ hash = {}
 hash[:my_key] = {second_level_key: "second level value"}
 
 puts hash
-#  => 
+#  =>
 {
   my_key: {
      second_level_key: "second level value"
@@ -111,8 +111,8 @@ puts hash
 }
 ```
 
-* Remember that you can add items to array using the `<<` method. 
-* Remember to use binding.pry to dig into your method and each level of the iteration. Play around with it inside the console. This will help you get the tests passing. 
+* Remember that you can add items to array using the `<<` method.
+* Remember to use binding.pry to dig into your method and each level of the iteration. Play around with it inside the console. This will help you get the tests passing.
 
 ## Resources
 
