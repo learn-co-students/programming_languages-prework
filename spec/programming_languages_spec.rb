@@ -36,8 +36,9 @@ describe '#reformat_languages' do
     }
   }
 
-  let(:result) { reformat_languages(languages_by_style) }
 
+  let(:result) { reformat_languages(languages_by_style) }
+#  binding.pry
   it 'reformats ruby properly' do
     ruby = {:type => "interpreted", :style => [:oo]}
     ruby.each { |k,v| expect(result[:ruby][k]).to eq(v) }
